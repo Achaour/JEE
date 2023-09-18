@@ -11,26 +11,15 @@
     </head>
     <body>
         <h1>Veuillez vous authentifier</h1>
-        <h2><%= new Date() %></h2>
     
-        <%
-            String login = request.getParameter( "txtLogin" );
-            String password = request.getParameter( "txtPassword" );
-            if ( login == null ) login = "";
-            if ( password == null ) password = "";
-            
-            if ( request.getMethod().equals( "POST" ) && login.equals( "bond" ) && password.equals( "007" ) ) {
-        %>
-            <p>Welcome <%= login %></p>
-        <% } else { %>
-            <form method="post" action="Login.jsp">  <!-- Le paramètre action est ici falcultatif -->
+        
+            <form method="post" action="login">  <!-- Le paramètre action est ici falcultatif -->
                 <label for='txtLogin'>Login :</label>
-                <input id='txtLogin' name='txtLogin' type='text' value='<%= login %>' autofocus /> <br/>
+                <input id='txtLogin' name='txtLogin' type='text' value='${login}' autofocus /> <br/>
                 <label for='txtPassword'>Password :</label>
-                <input name='txtPassword' type='password' value='<%= password %>' /> <br/>
+                <input name='txtPassword' type='password' value='${password}' /> <br/>
                 <br/>
-                <input name='btnConnect' type='submit' value='Se connecter' /> <br/>
-            </form>
-        <% } %>     
+                <input name='btnConnect' type='submit' /> <br/>
+            </form>  
     </body>
 </html>
