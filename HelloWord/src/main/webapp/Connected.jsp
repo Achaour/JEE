@@ -13,7 +13,7 @@
 
 
 <body>
-     <h1>Welcome to HellWorld app</h1>
+     <h1>Welcome to HellOWorld app</h1>
      <p>
            Welcome M. ${login} !
      </p>
